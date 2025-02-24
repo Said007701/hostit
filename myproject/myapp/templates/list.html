@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'nmadur.css' %}">
+</head>
+<body>
+
+
+    <div class="container">
+        <h1>Title</h1>
+        <a href="{% url 'create' %}" class="add-new">Add New Item</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th class = "actions">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for obj in obj %}
+                <tr>
+                    <td>{{ obj.title }}</td>
+                    <td class="actions">  
+                        <a href="{% url 'update' obj.id %}" class="edit">✏️</a>
+                        <a href="{% url 'delete' obj.id %}" class="delete">🗑️</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <a href="{% url 'index' %}">Back to Product List</a>
+</body>
+</html>
