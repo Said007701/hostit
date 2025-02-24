@@ -19,12 +19,12 @@
                 </tr>
             </thead>
             <tbody>
-                {% for obj in obj %}
+                {% for crud1 in crud1 %}
                 <tr>
-                    <td>{{ obj.title }}</td>
+                    <td>{{ crud1.title }}</td>
                     <td class="actions">  
-                        <a href="{% url 'update' obj.id %}" class="edit">✏️</a>
-                        <a href="{% url 'delete' obj.id %}" class="delete">🗑️</a>
+                        <a href="{% url 'update' crud1.id %}" class="edit">✏️</a>
+                        <a href="{% url 'delete' crud1.id %}" class="delete">🗑️</a>
                     </td>
                 </tr>
                 {% endfor %}
